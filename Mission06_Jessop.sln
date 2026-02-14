@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mission06_Jessop", "Mission06_Jessop\Mission06_Jessop.csproj", "{127AA1F3-0CA4-4704-9E20-FA2EC26DE51B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{127AA1F3-0CA4-4704-9E20-FA2EC26DE51B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{127AA1F3-0CA4-4704-9E20-FA2EC26DE51B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{127AA1F3-0CA4-4704-9E20-FA2EC26DE51B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{127AA1F3-0CA4-4704-9E20-FA2EC26DE51B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
