@@ -1,0 +1,71 @@
+@model IEnumerable<Mission06_Jessop.Models.Movie>
+@{
+    ViewData["Title"] = "My Movies";
+}
+
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1 class="mb-0">Joel Hilton's Movie Collection</h1>
+        <a asp-action="AddMovie" class="btn btn-primary">Add New Movie</a>
+    </div>
+
+    <div class="card shadow-sm">
+        <div class="card-body p-0">
+            <div class="table-responsive">
+                <table class="table table-hover table-striped align-middle mb-0">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Category</th>
+                            <th>Title</th>
+                            <th>Year</th>
+                            <th>Director</th>
+                            <th>Rating</th>
+                            <th class="text-center">Edited</th>
+                            <th class="text-center">Copied to Plex</th>
+                            <th>Lent To</th>
+                            <th>Notes</th>
+                            <th class="text-end">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var movie in Model)
+                        {
+                            <tr>
+                                <td>@(movie.Category ?? "-")</td>
+                                <td><strong>@movie.Title</strong></td>
+                                <td>@movie.Year</td>
+                                <td>@(movie.Director ?? "-")</td>
+                                <td>@(movie.Rating ?? "-")</td>
+                                <td class="text-center">
+                                    <span class="badge @(movie.Edited ? "bg-success" : "bg-secondary")">
+                                        @(movie.Edited ? "Yes" : "No")
+                                    </span>
+                                </td>
+                                <td class="text-center">
+                                    <span class="badge @(movie.CopiedToPlex ? "bg-info" : "bg-secondary")">
+                                        @(movie.CopiedToPlex ? "Yes" : "No")
+                                    </span>
+                                </td>
+                                <td>@(movie.LentTo ?? "-")</td>
+                                <td>@(movie.Notes ?? "-")</td>
+                                <td class="text-end">
+                                    <div class="btn-group btn-group-sm" role="group">
+                                        <a asp-action="Edit" asp-route-id="@movie.MovieId" class="btn btn-warning">Edit</a>
+                                        <a asp-action="Delete" asp-route-id="@movie.MovieId" class="btn btn-danger">Delete</a>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    @if (!Model.Any())
+    {
+        <div class="alert alert-info mt-3" role="alert">
+            <strong>No movies yet!</strong> Click "Add New Movie" to start building your collection.
+        </div>
+    }
+</div>
