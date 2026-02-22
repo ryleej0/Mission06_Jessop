@@ -18,6 +18,16 @@ public class HomeController : Controller
         return View();
     }
 
+    public IActionResult Podcasts()
+    {
+        return View();
+    }
+
+    public IActionResult GetToKnowJoel()
+    {
+        return View();
+    }
+
     public IActionResult Privacy()
     {
         return View();
